@@ -1,0 +1,1 @@
+(()=>{"use strict";const o=JSON.parse('{"name":"jack","age":18}');console.log(o);let e=["1","2","3"].map((o=>o*o));console.log(e),console.log(3)})();
