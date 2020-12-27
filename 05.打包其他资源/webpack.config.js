@@ -9,14 +9,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.less$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          // 将less文件编译成css文件
-          'less-loader',
-        ],
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
       },
+      // 打包其他资源（除了html/js/css资源以外的资源）
+      {
+        // 排除html/js/css资源
+        exclude:/\.(html|js|css|less)$/,
+        loader:'file-loader',
+        options:{
+          name:'[hash:10].[ext]'
+        }
+      }
     ],
   },
   plugins: [
@@ -25,5 +29,4 @@ module.exports = {
     }),
   ],
   mode: 'development',
-  // mode:'production',
 }
