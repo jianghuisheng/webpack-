@@ -26,7 +26,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      // 对输出的样式文件重命名
+      filename:'css/built.css'
+    })
   ],
   mode: 'development',
 }
