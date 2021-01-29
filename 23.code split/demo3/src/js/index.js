@@ -1,11 +1,11 @@
-import { mul } from './test';
+import $ from 'jquery';
 
 function sum(...args) {
   return args.reduce((p, c) => p + c);
 }
 
 // eslint-disable-next-line
-console.log(mul(2, 3))
+console.log(sum(1, 2, 3, 4))
 
 // eslint-disable-next-line
-console.log(sum(1, 2, 3, 4))
+console.log($('h1').text());
