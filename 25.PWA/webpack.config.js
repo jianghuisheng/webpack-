@@ -2,16 +2,11 @@ const { resolve } = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
 
 /**
- * tree shaking: 去除无用代码
- * 前提：1.必须使用ES6模块化 2.开启production环境
- * 作用：减少代码体积，提升构建速度
- * 
- * 在package.json中配置
- * "sideEffects": false 所有代码都没有副作用（都可以进行tree shaking)
- * 问题：可能会把css / @babel/polyfill (副作用) 文件干掉
- * "sideEffects": ["*.css","*.less"]
+ * PWA：渐进式网络开发应用程序（离线可访问）
+ *   workbox --> workbox-webpack-plugin
  */
 
 // 定义nodejs环境变量：决定使用browserslist的哪个环境
@@ -119,6 +114,16 @@ module.exports = {
         collapseWitespace: true,
         removeComment: true,
       },
+    }),
+    new WorkboxWebpackPlugin.GenerateSW({
+      /* 
+        1.帮助 serviceworker 快速启动
+        2.删除旧的 serviceworker
+
+        生成一个 serviceworker 配置文件~
+      */
+      clientsClaim: true,
+      skipWaiting: true,
     }),
   ],
   mode: 'production',
