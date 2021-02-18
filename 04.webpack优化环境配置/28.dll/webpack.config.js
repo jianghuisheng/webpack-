@@ -16,7 +16,7 @@ module.exports = {
     new webpack.DllReferencePlugin({
       manifest: resolve(__dirname, 'dll/manifest.json'),
     }),
-    // 将某个文件打包输出去，并在html中自动移入该资源
+    // 将某个文件打包输出去，并在html中自动移入该资源（报错就手动引）
     new AddAssetHtmlWebpackPlugin({
       filepath: resolve(__dirname, 'dll/jquery.js')
     }),
