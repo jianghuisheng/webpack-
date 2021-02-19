@@ -6,10 +6,17 @@
  * or disable the default devtool with "devtool: false".
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
-/******/ (function() { // webpackBootstrap
-/*!**********************!*\
-  !*** ./src/index.js ***!
-  \**********************/
-eval("\r\n// import add from './add';\r\n// import count from './count';\r\n\r\nconsole.log('index.js加载了~');\r\n\r\n// console.log(add(1,2));\r\n// console.log(count(3,2));\n\n//# sourceURL=webpack:///./src/index.js?");
-/******/ })()
-;
+(self["webpackChunk"] = self["webpackChunk"] || []).push([["src_add_js"],{
+
+/***/ "./src/add.js":
+/*!********************!*\
+  !*** ./src/add.js ***!
+  \********************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction add(x, y) {\r\n  return x + y\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (add);\r\n\n\n//# sourceURL=webpack:///./src/add.js?");
+
+/***/ })
+
+}]);
