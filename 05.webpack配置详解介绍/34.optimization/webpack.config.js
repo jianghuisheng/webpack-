@@ -37,7 +37,7 @@ module.exports = {
     ],
   },
   plugins: [new HtmlWebpackPlugin()],
-  mode: 'development',
+  mode: 'production',
   resolve: {
     // 配置解析模块路径别名：优点简写路径 缺点路径没有提示
     alias: {
@@ -48,4 +48,7 @@ module.exports = {
     // 告诉webpack解析模块是去找哪个目录
     modules: [resolve(__dirname, '../../node_modules'), 'node_modules'],
   },
+  optimization:{
+    
+  }
 }
